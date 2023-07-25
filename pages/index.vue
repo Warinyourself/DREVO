@@ -1,5 +1,6 @@
 <template>
   <div>
-    <Main />
+    <Canvas />
+    <Grid />
   </div>
 </template>

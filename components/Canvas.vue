@@ -1,5 +1,6 @@
 <template>
-    <canvas ref="canvasRef" key="time"></canvas>
+    <canvas ref="canvasRef" key="time" class="spiral-canvas" />
+
     <div class="debug" key="1">
       <span key="2">time: {{ time }}</span>
       <span>scroll: {{ scroll }}</span>
@@ -52,10 +53,13 @@ const handleResize = () => {
 }
 
 const handleScroll = (event: WheelEvent) => {
+  const delta = Math.abs(event.deltaY / 300)
+  const diff = Math.min(delta, 0.3)
+
   if (event.deltaY > 1) {
-    speedModule.minus(Math.abs(event.deltaY))
+    speedModule.minus(diff)
   } else {
-    speedModule.add(Math.abs(event.deltaY))
+    speedModule.add(diff)
   }
 
   scroll.value = event.deltaY
@@ -90,4 +94,12 @@ onUnmounted(() => {
   display grid
   gap 8
   border-radius 0 0 0 12px
+
+.spiral-canvas
+  position fixed
+  top 0
+  right 0
+  bottom 0
+  left 0
+
 </style>

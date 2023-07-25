@@ -52,7 +52,7 @@ export const drawFinalSpiral = (ctx: CanvasRenderingContext2D, { time, height, w
       time,
       oppositeDraw: true,
       position: { x: centerWidth, y: centerHeight },
-      distance: 11.5
+      distance: 12
     })
 
     ctx.closePath();

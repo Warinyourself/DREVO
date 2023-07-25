@@ -1,12 +1,12 @@
 export class MomentumConservationModule {
-    resistance = 0.05
+    resistance = 0.005
     speed = 0
     distance = 0
 
     private minSpeed: number
     private maxSpeed: number
 
-    constructor({ minSpeed = 1, maxSpeed = 30 }) {
+    constructor({ minSpeed = 1, maxSpeed = 20 }) {
         this.speed = minSpeed
         this.minSpeed = minSpeed
         this.maxSpeed = maxSpeed
