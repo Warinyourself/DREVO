@@ -3,6 +3,7 @@ export class MomentumConservationModule {
     speed = 0
     distance = 0
 
+    private isStarted = false
     private minSpeed: number
     private maxSpeed: number
 
@@ -13,6 +14,9 @@ export class MomentumConservationModule {
     }
 
     start() {
+        if (this.isStarted) return
+
+        this.isStarted = true
         requestAnimationFrame(this.check.bind(this))
     }
 
@@ -30,3 +34,5 @@ export class MomentumConservationModule {
         this.speed = Math.min(this.maxSpeed, this.speed - speed)
     }
 }
+
+export const speedModule = new MomentumConservationModule({})

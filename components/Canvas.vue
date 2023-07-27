@@ -1,7 +1,7 @@
 <template>
     <canvas ref="canvasRef" key="time" class="spiral-canvas" />
 
-    <div class="debug" key="1">
+    <div class="debug" key="1" v-if="showDebugInfo">
       <span key="2">time: {{ time }}</span>
       <span>scroll: {{ scroll }}</span>
       <span>speed: {{ speed }}</span>
@@ -10,17 +10,17 @@
 </template>
 
 <script lang="ts" setup>
-import { MomentumConservationModule } from '../utils/speed';
+import { speedModule } from '../utils/speed';
 import { drawFinalSpiral } from '../utils/spiral'
 
 const canvasRef = ref()
 let canvasSize = { width: 0, height: 0 }
-const time = ref(0)
-const scroll = ref(0)
+const time = ref(speedModule.distance)
+const scroll = ref(speedModule.speed)
 const speed = ref(0)
-const distance = ref(0)
-const stopAnimation = ref(false)
-const speedModule = new MomentumConservationModule({})
+const distance = ref(speedModule.distance)
+const ignore = ref(false)
+const showDebugInfo = ref(false)
 
 const redrawCanvas = () => {
   const canvas = canvasRef.value as HTMLCanvasElement
@@ -32,10 +32,11 @@ const redrawCanvas = () => {
 
   drawFinalSpiral(ctx, { time: time.value, width, height })
 
-  if (!stopAnimation.value) {
-    time.value = speedModule.distance
+  if (distance.value > 1000) {
+    ignore.value = true
   }
 
+  time.value = speedModule.distance
   speed.value = speedModule.speed
   distance.value = speedModule.distance
 
@@ -53,6 +54,8 @@ const handleResize = () => {
 }
 
 const handleScroll = (event: WheelEvent) => {
+  if (ignore.value) return
+
   const delta = Math.abs(event.deltaY / 300)
   const diff = Math.min(delta, 0.3)
 
