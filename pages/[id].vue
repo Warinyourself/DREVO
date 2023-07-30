@@ -23,6 +23,5 @@ const iconName = route.params.id
 
 <style lang="stylus">
 .item.main-icon
-  width 60vmin
-  height 60vmin
+  --item-size: 60vmin
 </style>

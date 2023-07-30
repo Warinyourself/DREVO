@@ -17,5 +17,5 @@
 </template>
 
 <script lang="ts" setup>
-const itemList = ref(['doll', 'doll1', 'main', 'union', 'doll', 'union'])
+const itemList = ref(['doll', 'doll1', 'main', 'union'])
 </script>

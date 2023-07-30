@@ -24,6 +24,8 @@ const showDebugInfo = ref(false)
 
 const redrawCanvas = () => {
   const canvas = canvasRef.value as HTMLCanvasElement
+  if (!canvas) return
+
   const ctx = canvas.getContext("2d");
   
   if (!ctx) return

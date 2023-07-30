@@ -1,5 +1,7 @@
 <template>
-    <component :is="icon" />
+    <div class="icon-wrapper">
+        <component :is="icon" />
+    </div>
 </template>
 
 <script lang="ts" setup>
@@ -26,6 +28,8 @@ const icon = computed(() => icons[props.name])
 </script>
 
 <style lang="stylus">
-svg
-    transition-duration .4s
+.icon-wrapper
+    svg
+        width 100%
+        height 100%
 </style>
