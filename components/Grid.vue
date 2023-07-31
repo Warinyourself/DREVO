@@ -9,8 +9,8 @@
             >
                 <Icon
                     :name="item.name"
-                    :style="{ 'view-transition-name': `icon-${item.name}` }"
                 />
+                <!-- :style="{ 'view-transition-name': `icon-${item.name}` }" -->
             </NuxtLink>
         </div>
     </div>

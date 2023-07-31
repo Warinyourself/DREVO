@@ -7,7 +7,7 @@
 <script lang="ts" setup>
 const props = defineProps({
     name: {
-        type: String as PropType<string>,
+        type: String,
         required: true
     },
 })

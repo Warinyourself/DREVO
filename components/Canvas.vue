@@ -47,8 +47,7 @@ const redrawCanvas = () => {
 
 const handleResize = () => {
   const canvas = canvasRef.value as HTMLCanvasElement
-  const document = window.document.documentElement
-  const { width, height } = document.getBoundingClientRect()
+  const { innerHeight: height, innerWidth: width } = window
   canvasSize = { width, height }
 
   canvas.width = width

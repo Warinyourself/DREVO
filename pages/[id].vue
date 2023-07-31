@@ -5,8 +5,8 @@
       <NuxtLink to="/" class="main-icon item">
         <Icon
           :name="iconName"
-          :style="{ 'view-transition-name': `icon-${iconName}` }"
         />
+        <!-- :style="{ 'view-transition-name': `icon-${iconName}` }" -->
       </NuxtLink>
     </div>
   </div>

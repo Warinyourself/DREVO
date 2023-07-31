@@ -1,12 +1,32 @@
+:root
+    --primary-color white
+    --foreground-color black
+
 ::view-transition-old(root),
 ::view-transition-new(root)
   animation-duration .3s
 
+::-webkit-scrollbar
+	width 5px
+	height 4px
+
+::-webkit-scrollbar:hover
+	cursor pointer
+
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-corner,
+::-webkit-resizer
+	background transparent
+
+::-webkit-scrollbar-thumb
+	background var(--primary-color)
+	border-radius 2px
+
 body
     padding 0
     margin 0
-    color white
-    background black
+    color var(--primary-color)
+    background var(--foreground-color)
 
 main
     min-height 99vh
@@ -28,7 +48,7 @@ main
     min-height var(--item-size)
     border-radius 4vmin
     box-sizing border-box
-    border 2px solid white
+    border 2px solid var(--primary-color)
     backdrop-filter blur(10px)
     background-color rgba(0, 0, 0, .2)
     display grid
