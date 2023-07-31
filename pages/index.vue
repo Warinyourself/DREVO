@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="page">
     <Canvas />
     <Grid />
   </div>
@@ -10,3 +10,8 @@ useSeoMeta({
   title: 'DREVO'
 })
 </script>
+
+<style lang="stylus">
+.page
+  padding 24px
+</style>

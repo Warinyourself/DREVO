@@ -19,19 +19,59 @@
 <script lang="ts" setup>
 const itemList = ref([
     {
-        name: 'doll',
-        class: 'medium'
+        name: 'balalaika',
     },
     {
         name: 'doll1',
-    },
-    {
-        name: 'main',
-    },
-    {
-        name: 'union',
         class: 'medium'
-    }
+    },
+    {
+        name: 'kremlin1'
+    },
+    {
+        name: 'orthodoxy'
+    },
+    {
+        name: 'squirrel'
+    },
+    {
+        name: 'ballerina'
+    },
+    {
+        name: 'doll'
+    },
+    {
+        name: 'snow'
+    },
+    {
+        name: 'motherOfGod',
+        class: 'medium'
+    },
+    {
+        name: 'bear1'
+    },
+    {
+        name: 'kalashnikov'
+    },
+    {
+        name: 'socks'
+    },
+    {
+        name: 'accordion'
+    },
+    {
+        name: 'bear'
+    },
+    {
+        name: 'kremlin'
+    },
+    {
+        name: 'mother',
+        class: 'medium'
+    },
+    {
+        name: 'sputnik'
+    },
 ])
 
 </script>
